@@ -9,10 +9,10 @@
 #include <imgui/imgui_impl_opengl3.h>
 
 #include <iostream>
-#include <string>
 #include <fstream>
 
 #include "SoundGUI.h"
+#include "SoundManager.h"
 
 SoundManager man;
 void CallBack(GLFWwindow* window, const int key, int scancode, const int action, const int mods);
@@ -327,6 +327,8 @@ void SoundGUI::Update() {
 		}
 	}
 	
+	ImGui::Separator();
+
 	std::string tmp = std::to_string(score);
 	ImGui::Text("Score: ");
 	ImGui::SameLine();
@@ -354,8 +356,8 @@ void SoundGUI::Update() {
 	if (ImGui::Button("Distortion")) {
 		man.AddDSPEffect("master", "Distortion");
 	}
-	//ImGui::Separator();
-	ImGui::Text("Music");
+	ImGui::Separator();
+	ImGui::Text("Sounds");
 	if (ImGui::Button("Chorus")) {
 		man.AddDSPEffect("sounds", "Chorus");
 	}
@@ -367,7 +369,7 @@ void SoundGUI::Update() {
 	if (ImGui::Button("Reverb")) {
 		man.AddDSPEffect("sounds", "Reverb");
 	}
-	//ImGui::Separator();
+	ImGui::Separator();
 	ImGui::Text("SFX");
 	if (ImGui::Button("Delay")) {
 		man.AddDSPEffect("sfx", "Delay");
@@ -527,6 +529,7 @@ void SoundGUI::LoadSongFromFile() {
 
 	ImGui::Text("Note: this option can only be accessed once ");
 	ImGui::Text("for each individual run of this application. ");
+	ImGui::Separator();
 
 	if (ImGui::Checkbox(".mp3", &isMPEG3)) {
 		if (isMPEG3 == true) {

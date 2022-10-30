@@ -1,8 +1,7 @@
 #pragma once
 
 #include <vector>
-
-#include "SoundManager.h"
+#include <string>
 
 class SoundGUI {
 	
@@ -46,5 +45,4 @@ public:
 	void ManageDSPS();
 	void ReadFromFile();
 	void LoadSongFromFile();
-	//void CallBack(GLFWwindow* window, const int key, int scancode, const int action, const int mods);
 };
