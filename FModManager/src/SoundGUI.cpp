@@ -522,11 +522,6 @@ void SoundGUI::LoadSongFromFile() {
 		LoadInstance.song9.name = "Keep On - Alfa Mist";
 		LoadInstance.song9.genre = "Jazz";
 
-		man.LoadSounds("arrow.wav", soundFiles[20], FMOD_DEFAULT);
-		man.LoadSounds("air_raid.wav", soundFiles[21], FMOD_LOOP_NORMAL);
-		man.LoadSounds("kick.wav", soundFiles[22], FMOD_LOOP_NORMAL);
-		man.LoadSounds("tick.wav", soundFiles[23], FMOD_LOOP_NORMAL);
-		man.LoadSounds("za_warudo.mp3", soundFiles[24], FMOD_LOOP_NORMAL);
 		loaded = false;
 	}
 
@@ -545,6 +540,11 @@ void SoundGUI::LoadSongFromFile() {
 			man.LoadSounds(LoadInstance.song7.name, soundFiles[17], FMOD_DEFAULT);
 			man.LoadSounds(LoadInstance.song8.name, soundFiles[18], FMOD_DEFAULT);
 			man.LoadSounds(LoadInstance.song9.name, soundFiles[19], FMOD_DEFAULT);
+			man.LoadSounds("arrow.wav", soundFiles[20], FMOD_DEFAULT);
+			man.LoadSounds("air_raid.wav", soundFiles[21], FMOD_LOOP_NORMAL);
+			man.LoadSounds("kick.wav", soundFiles[22], FMOD_LOOP_NORMAL);
+			man.LoadSounds("tick.wav", soundFiles[23], FMOD_LOOP_NORMAL);
+			man.LoadSounds("za_warudo.mp3", soundFiles[24], FMOD_LOOP_NORMAL);
 			isMPEG3 = true;
 			
 			std::cout << "\nLoaded mp3.";
@@ -562,6 +562,11 @@ void SoundGUI::LoadSongFromFile() {
 			man.LoadSounds(LoadInstance.song7.name, soundFiles[7], FMOD_DEFAULT);
 			man.LoadSounds(LoadInstance.song8.name, soundFiles[8], FMOD_DEFAULT);
 			man.LoadSounds(LoadInstance.song9.name, soundFiles[9], FMOD_DEFAULT);
+			man.LoadSounds("arrow.wav", soundFiles[20], FMOD_DEFAULT);
+			man.LoadSounds("air_raid.wav", soundFiles[21], FMOD_LOOP_NORMAL);
+			man.LoadSounds("kick.wav", soundFiles[22], FMOD_LOOP_NORMAL);
+			man.LoadSounds("tick.wav", soundFiles[23], FMOD_LOOP_NORMAL);
+			man.LoadSounds("za_warudo.mp3", soundFiles[24], FMOD_LOOP_NORMAL);
 			isWAVE = true;
 			
 			std::cout << "\nLoaded wave.";
