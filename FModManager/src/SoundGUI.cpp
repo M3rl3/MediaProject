@@ -393,7 +393,7 @@ void SoundGUI::Update() {
 	ImGui::Text("All licenses belong to their respective owners.");
 	ImGui::Text("No copyright violation is intended.");
 	ImGui::Separator();
-	ImGui::Text("Warning: the sound effects in this ");
+	ImGui::Text("WARNING: The sound effects in this ");
 	ImGui::Text("appliction may damage your ears/hardware.");
 	ImGui::Text("Please set an appropriate volume before playing.");
 	
