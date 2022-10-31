@@ -431,6 +431,11 @@ void SoundGUI::ManagerInit() {
 
 void CallBack(GLFWwindow* window, const int key, int scancode, const int action, const int mods)
 {
+	if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
+	{
+		glfwSetWindowShouldClose(window, GLFW_TRUE);
+	}
+
 	if (key == GLFW_KEY_SPACE && action == GLFW_PRESS)
 	{
 
