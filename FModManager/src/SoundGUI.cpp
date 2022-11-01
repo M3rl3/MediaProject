@@ -161,7 +161,6 @@ void SoundGUI::Update() {
 	
 	ImGui::SliderFloat("Pan", &channelGroup0->current_pan, -1.0f, 1.0f, "%.2f");
 	man.SetChannelPan("master", channelGroup0->current_pan);
-
 	
 	if (ImGui::Button("Stop all sounds")) {
 		
@@ -340,7 +339,6 @@ void SoundGUI::Update() {
 			playOnce = false;
 		}
 	}
-	
 	ImGui::End();
 
 	ImGui::Begin("DSP Effects");
@@ -385,9 +383,12 @@ void SoundGUI::Update() {
 	ImGui::End();
 
 	ImGui::Begin("Info");
+	ImGui::Text("Keyboard Shortcuts");
 	ImGui::Text("Numeric keys 1-5: Random sound effects.");
 	ImGui::Text("Spacebar key: Global stop button.");
+	ImGui::Text("Escape key: Exit application.");
 	ImGui::Separator();
+	ImGui::Text("Disclaimer");
 	ImGui::Text("These songs were picked at random ");
 	ImGui::Text("from my spotify most played playlist.");
 	ImGui::Text("All licenses belong to their respective owners.");
@@ -398,7 +399,6 @@ void SoundGUI::Update() {
 	ImGui::Text("Please set an appropriate volume before playing.");
 	
 	ImGui::End();
-
 }
 
 void SoundGUI::Render() {
@@ -406,7 +406,6 @@ void SoundGUI::Render() {
 	ImGui::Render();
 	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }
-
 
 void SoundGUI::ShutDown() {
 	//Gracefully close everything down
@@ -438,7 +437,6 @@ void CallBack(GLFWwindow* window, const int key, int scancode, const int action,
 
 	if (key == GLFW_KEY_SPACE && action == GLFW_PRESS)
 	{
-
 		SoundManager::ChannelGroup* channelGroup0;
 		man.FetchChannelGroup("master", &channelGroup0);
 
@@ -453,12 +451,10 @@ void CallBack(GLFWwindow* window, const int key, int scancode, const int action,
 	{
 		man.PlaySounds("air_raid.wav", "sfx");
 	}
-
 	if (key == GLFW_KEY_2 && action == GLFW_PRESS)
 	{
 		man.PlaySounds("arrow.wav", "sfx");
 	}
-
 	if (key == GLFW_KEY_3 && action == GLFW_PRESS)
 	{
 		man.PlaySounds("kick.wav", "sfx");
@@ -474,6 +470,7 @@ void CallBack(GLFWwindow* window, const int key, int scancode, const int action,
 }
 
 void SoundGUI::ManageDSPS() {
+
 	man.CreateDSPEffect("PitchShift", FMOD_DSP_TYPE_PITCHSHIFT, 2.f);
 	man.CreateDSPEffect("Echo", FMOD_DSP_TYPE_ECHO, 250.f);
 	man.CreateDSPEffect("Distortion", FMOD_DSP_TYPE_DISTORTION, 1.f);
